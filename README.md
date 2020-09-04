@@ -1,9 +1,9 @@
 
 # TelePAM
 
-> This is now DEPRECATED, as it was based on the excellent work of [Visheng](https://github.com/vysheng/tg) 
+> Based on [Visheng](https://github.com/vysheng/tg)'s work 
 
-TelePAM is a little unicorn that sent you messages when someone opened a new session in your Linux machine through PAM's pam_exec.
+TelePAM is a little unicorn that sends you messages when someone opens a new session in your Linux machine through PAM's pam_exec.
 
 
 The idea started while playing with PAM for reasons that i do not recall.
@@ -25,5 +25,3 @@ TelePAM also does a couple more helpful things, like:
  - Executes a PHP page and return the output (file not provided) 
  - Greetings in italian replying to "Ciao"
 
-
-I will port TelePAM to a newer alternative, eventually, i will leave this repo as it is for reference.
