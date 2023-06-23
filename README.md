@@ -15,7 +15,8 @@ TelePAM is a little unicorn that sends you messages when someone opens a new ses
 	`mv pam_login.* /usr/bin/`
 5. `pip3 install telebot`
 
-If everything goes correctly at the next login you will receive a message to your bot.
+If everything goes correctly at the next login you will receive a message to your bot similar to:
+![alt text](https://github.com/xawos/telepam/blob/master/test.png?raw=true)
 Remember to send a message to the bot before setting this up, or Telegram will reject the request.
 
 For any debugging purposes change the line we added in `/etc/pam.d/common-session` to:
@@ -23,4 +24,4 @@ For any debugging purposes change the line we added in `/etc/pam.d/common-sessio
 - You'll have a file in `/tmp/pam_exec.log` with pam_exec's output to guide you in troubleshooting
 
 The idea started while playing with PAM for reasons that i do not recall because:
-![alt text](https://github.com/xawos/telepam/blob/main/test.png?raw=true)
+![alt text](https://github.com/xawos/telepam/blob/master/notacleverman.jpg?raw=true)
