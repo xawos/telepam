@@ -9,7 +9,7 @@ TelePAM is a little unicorn that sends you messages when someone opens a new ses
 0. Follow [this](https://blog.devgenius.io/how-to-set-up-your-telegram-bot-using-botfather-fd1896d68c02) instructions to create a Telegram bot and [this](https://botostore.com/c/getmyid_bot/) to get your ID.
 1. Clone the repo and enter its folder.
 2. Add the following line at the end of the file `/etc/pam.d/common-session`:
-`    session optional        pam_exec.so     /usr/bin/pam_login.sh`
+ `session optional        pam_exec.so     /usr/bin/pam_login.sh`
 3. **Change** file pam_login.py with **your** id and token
 4. Place the files pam_login.[py,sh] in /usr/bin
 	`mv pam_login.* /usr/bin/`
