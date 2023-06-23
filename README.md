@@ -1,27 +1,26 @@
 
 # TelePAM
 
-> Based on [Visheng](https://github.com/vysheng/tg)'s work 
-
 TelePAM is a little unicorn that sends you messages when someone opens a new session in your Linux machine through PAM's pam_exec.
 
 
-The idea started while playing with PAM for reasons that i do not recall.
-
 > Instructions
 
-0. Follow [Visheng](https://github.com/vysheng/tg)'s instructions to setup the bot.
-1. Place "common-session" in /etc/pam.d/ OR modify your file according to the one provided;
-The only change is the added line:
-    session optional        pam_exec.so     /usr/bin/pam_login.sh
-Be sure to use "optional", otherwise if the Telegram client is not working PAM will not let you in. 
-2. Place the file pam_login.sh in /usr/bin and you're good to go.
-3. Put "action.lua" in the same folder as telegram-cli.
-4. Start the bot with the "start_tg.sh" shell script
+0. Follow [this](https://blog.devgenius.io/how-to-set-up-your-telegram-bot-using-botfather-fd1896d68c02) instructions to create a Telegram bot and [this](https://botostore.com/c/getmyid_bot/) to get your ID.
+1. Clone the repo and enter its folder.
+2. Add the following line at the end of the file `/etc/pam.d/common-session`:
+`    session optional        pam_exec.so     /usr/bin/pam_login.sh`
+3. **Change** file pam_login.py with **your** id and token
+4. Place the files pam_login.[py,sh] in /usr/bin
+	`mv pam_login.* /usr/bin/`
+5. `pip3 install telebot`
 
-TelePAM also does a couple more helpful things, like:
- - Reply to "Ping" with "Pong"
- - Execute shell commands if the message starts with "!" and you're authorized
- - Executes a PHP page and return the output (file not provided) 
- - Greetings in italian replying to "Ciao"
+If everything goes correctly at the next login you will receive a message to your bot.
+Remember to send a message to the bot before setting this up, or Telegram will reject the request.
 
+For any debugging purposes change the line we added in `/etc/pam.d/common-session` to:
+- `session optional        pam_exec.so     debug   log=/tmp/pam_exec.log   /usr/bin/pam_login.sh`
+- You'll have a file in `/tmp/pam_exec.log` with pam_exec's output to guide you in troubleshooting
+
+The idea started while playing with PAM for reasons that i do not recall because:
+![alt text](https://github.com/xawos/telepam/blob/main/test.png?raw=true)
